@@ -81,8 +81,8 @@ def run():
         """,
     ]
 
-    intentos = 6
-    fallos = 0
+    attemps = 6
+    fails = 0
     word = getWord()
     underscore_word = []
     for i in word:
@@ -95,18 +95,18 @@ def run():
         print(handed_picture[fallos])
         print(str(underscore_word), "\n")
         index = 0
-        confirmador = 0
+        validator = 0
         n = input("Introduce una letra: ")
-        if fallos < intentos:
+        if fails < attemps:
             while index < len(word):
                 if word[index] == n:
                     underscore_word[index] = n
-                    confirmador+=1 
+                    validator+=1 
                 index+=1
-            if confirmador == 0:
-                fallos+=1
+            if validator == 0:
+                fails+=1
             
-        if fallos == intentos:
+        if fails == attemps:
             os.system("clear")
             print(handed_picture[6])
             print("Has sido ahorcado, la palabra era: ", "".join(word))
